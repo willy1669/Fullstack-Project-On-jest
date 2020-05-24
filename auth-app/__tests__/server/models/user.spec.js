@@ -34,6 +34,22 @@ describe('The User model', () => {
         expect(Bycrypt.compareSync(user.password, createdUser.password)).toBe(true);
 
     });
+
+    it('should set the email confirm code for the user before saving to database', async () => {
+
+        const user = {
+            name: 'Test User',
+
+            email: 'test@user.com',
+
+            password: 'password'
+        }
+        
+        const createdUser = await   User.create(user);
+
+        expect(createdUser.emailConfirmCode).toEqual(expect.any(String))
+
+    })
     
     afterAll( async () => {
         
