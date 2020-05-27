@@ -59,6 +59,17 @@ describe("The login validator", () => {
 
     expect(statusSpy).toHaveBeenCalledWith(422);
 
-    expect(jsonSpy).toHaveBeenCalled();
+    expect(jsonSpy).toHaveBeenCalledWith({
+
+        message: 'Validation failed.',
+        data : {
+
+            errors: {
+                'email': 'email is a required field'
+            }
+            
+        }
+        
+    });
   })
 });
