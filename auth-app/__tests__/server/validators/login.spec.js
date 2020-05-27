@@ -57,7 +57,7 @@ describe("The login validator", () => {
 
     await loginValidator(req, res, next);
 
-    expect(statusSpy).toHaveBeenCalled();
+    expect(statusSpy).toHaveBeenCalledWith(422);
 
     expect(jsonSpy).toHaveBeenCalled();
   })
