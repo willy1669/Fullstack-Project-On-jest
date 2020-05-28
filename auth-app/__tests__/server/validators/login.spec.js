@@ -65,7 +65,7 @@ describe("The login validator", () => {
         data : {
 
             errors: {
-                'email': 'email is a required field'
+                'email': 'email is a required field'  // validate with yup library
             }
             
         }
